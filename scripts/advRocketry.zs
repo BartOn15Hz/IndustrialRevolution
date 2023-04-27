@@ -3,7 +3,8 @@ import mods.jei.JEI.removeAndHide as rh;
 
 # Removals 
 val removals = [
-    <libvulpes:coalgenerator>,
+    <libvulpes:coalgenerator>, // Coal Generator
+    <libvulpes:ore0:10>        // Iridium Ore
 ] as IItemStack[];
 
 for removal in removals {
