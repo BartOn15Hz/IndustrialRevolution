@@ -1,6 +1,15 @@
 import crafttweaker.item.IItemStack as IItemStack;
 import mods.jei.JEI.removeAndHide as rh;
 
+
+# Removals 
+val removals = [
+    <libvulpes:coalgenerator>,
+] as IItemStack[];
+
+for removal in removals {
+    rh(removal);
+}
 # Motors
 
 // Basic Motor
