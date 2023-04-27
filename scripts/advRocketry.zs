@@ -1,7 +1,6 @@
 import crafttweaker.item.IItemStack as IItemStack;
 import mods.jei.JEI.removeAndHide as rh;
 
-
 # Removals 
 val removals = [
     <libvulpes:coalgenerator>,
@@ -10,7 +9,15 @@ val removals = [
 for removal in removals {
     rh(removal);
 }
+
+# Rocket Fuels
+
+# Circuits and Boards
+
+
 # Motors
+mods.advancedrocketry.ChemicalReactor.removeRecipe(<liquid:rocketfuel>);
+
 
 // Basic Motor
 recipes.remove(<libvulpes:motor>);
