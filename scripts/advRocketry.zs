@@ -1,5 +1,13 @@
+# By BartOn15Hz
+
+# Imports
+
 import crafttweaker.item.IItemStack as IItemStack;
 import mods.jei.JEI.removeAndHide as rh;
+import mods.ic2.HeatExchanger;
+import mods.modularmachinery.RecipeBuilder;
+import mods.modularmachinery.RecipePrimer;
+import mods.immersiveengineering.Mixer;
 
 # Removals 
 val removals = [
@@ -65,3 +73,74 @@ recipes.addShaped("CTVulpMachineCasing", <libvulpes:structuremachine> *4,[
     []
 ]);
 */ 
+
+# Fuels
+
+# Shared
+// High-conc Brine
+mods.immersiveengineering.Mixer.addRecipe(
+    <liquid:highbrine>,
+    <liquid:brine>,
+    [<ore:itemSalt> *3],
+    1024);
+
+# Bipropellant Fuel - 1,1-Dimethylhydrazine
+
+
+# Bipropellant Oxidizer - Dinitrogen Tetroxide
+// Water + Coal in an generator with steam boiler upgrade (thermal) makes steam
+
+// Nitric Oxide
+var NitricOxide = RecipeBuilder.newBuilder("CTNitricOxide", "chemical_reactor", 400);
+NitricOxide.addEnergyPerTickInput("1024");
+NitricOxide.addFluidInput(<liquid:ammonia>);
+NitricOxide.addFluidInput(<liquid:oxygen>);
+NitricOxide.addFluidInput(<liquid:steam>);
+NitricOxide.addFluidOutput(<liquid:nitricoxide>);
+NitricOxide.build();
+
+// Impure Nitric Dioxide
+var ImpureNitricDioxide = RecipeBuilder.newBuilder("CTImpureNitricDioxide", "chemical_reactor", 400 );
+ImpureNitricDioxide.addEnergyPerTickInput("1024");
+ImpureNitricDioxide.addFluidInput(<liquid:nitricoixde>);
+ImpureNitricDioxide.addFluidInput(<liquid:oxygen>);
+ImpureNitricDioxide.addFluidOutput(<liquid:impurenitrogendioxide>);
+ImpureNitricDioxide.build();
+
+
+// Nitric Acid
+var NitricAcid = RecipeBuilder.newBuilder("CTNitricAcid", "chemical_reactor", 400);
+NitricAcid.addEnergyPerTickInput("1024");
+NitricAcid.addFluidInput(<liquid:impurenitrogendioxide>);
+NitricAcid.addFluidInput(<liquid:water>);
+NitricAcid.addFluidOutput(<liquid:nitricacid>);
+NitricAcid.build();
+
+// Nitrogen Dioxide
+var NitricDioxide = RecipeBuilder.newBuilder("CTNitricDioxide", "chemical_reactor", 400);
+NitricDioxide.addEnergyPerTickInput("1024");
+NitricDioxide.addFluidInput(<liquid:impurenitrogendioxide>);
+NitricDioxide.addFluidInput(<liquid:nitricacid>);
+NitricDioxide.addItemInput(<ore:dustPlatinum>);
+NitricDioxide.addFluidOutput(<liquid:nitrogendioxide>);
+NitricDioxide.build();
+
+// Dinitrogen Tetraoxide
+var DinitrogenTetroxide = RecipeBuilder.newBuilder("CTDinitrogenTetroxide", "chemical_reactor", 400);
+DinitrogenTetroxide.addEnergyPerTickInput("1024");
+DinitrogenTetroxide.addFluidInput(<liquid:nitrogendioxide>);
+DinitrogenTetroxide.addFluidInput(<liquid:highbrine>);
+DinitrogenTetroxide.addFluidOutput(<liquid:dinitrogentetroxide>);
+DinitrogenTetroxide.build();
+
+/* 
+Example
+
+var name = RecipeBuilder.newBuilder("Name", "chemical_reactor", ticks);
+name.addEnergyPerTickInput("2048");
+name.addItemInput("");
+name.addItemOutput("");
+name.addFluidInput("");
+name.addFluidOutput("");
+name.build();
+*/
