@@ -8,7 +8,7 @@
 			<orbitalDistance>41</orbitalDistance>
 			<rotationalPeriod>1416000</rotationalPeriod>
 		</planet>
-		<planet name="Venus" DIMID="102" temp="750" customIcon="lava">
+		<planet name="Venus" DIMID="102" temp="750" customIcon="venusian">
 			<biomeIds>biomesoplenty:volcanic_island</biomeIds>
 			<skyColor>0,0,0</skyColor>
 			<fogColor>0.9,0.9,0.9</fogColor>
@@ -46,7 +46,7 @@
 			<gravitationalMultiplier>38</gravitationalMultiplier>
 			<rotationalPeriod>24616</rotationalPeriod>
 		</planet>
-		<planet name="Jupiter" DIMID="104" customIcon="gasgiantred">
+		<planet name="Jupiter" DIMID="104" customIcon="gasgiantbrown">
 			<GasGiant>true</GasGiant>
 			<gas>hydrogen</gas>
 			<gas>helium</gas>
@@ -66,9 +66,9 @@
 				<orbitalDistance>90</orbitalDistance>
 				<orbitalPhi>90</orbitalPhi>
 				<rotationalPeriod>84000</rotationalPeriod>
-<!--WIP Other Jupiter Moons (and their uses)-->
+			</planet>
 		</planet>
-		<planet name="Saturn" DIMID="107" customIcon="gasgiantblue">
+		<planet name="Saturn" DIMID="107" customIcon="gasgiantbrown">
 			<GasGiant>true</GasGiant>
 			<gas>hydrogen</gas>
 			<gas>helium</gas>
@@ -87,7 +87,6 @@
 			<GasGiant>true</GasGiant>
 			<gas>hydrogen</gas>
 			<gas>helium</gas>
-			<gas>methane</gas>
 			<hasRings>true</hasRings>
 			<orbitalDistance>1200</orbitalDistance>
 			<rotationalPeriod>17233</rotationalPeriod>
@@ -96,10 +95,8 @@
 			<GasGiant>true</GasGiant>
 			<gas>hydrogen</gas>
 			<gas>helium</gas>
-			<gas>methane</gas>
 			<orbitalDistance>1600</orbitalDistance>
 			<rotationalPeriod>16100</rotationalPeriod>
 		</planet>
 	</star>
-	<!--WIP Other Planets/Stars (and their uses)-->
 </galaxy>
